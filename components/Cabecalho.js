@@ -1,5 +1,6 @@
 import React from 'react'
 import { Container, Nav, Navbar } from 'react-bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Cabecalho = () => {
   return (
