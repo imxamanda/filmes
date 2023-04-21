@@ -4,7 +4,7 @@ import React from 'react'
 import { Card, Col, Row } from 'react-bootstrap'
 
 
-const Detalhes = ({filme}) => {
+const Detalhes = ({filme, atores}) => {
    
     return (
         <Navbar titulo={filme.title}>
@@ -32,6 +32,16 @@ const Detalhes = ({filme}) => {
                 </Col>
             </Row>
 
+            <h2>Elenco</h2>
+            <Row>
+            {atores.map (item => (
+                <Col className='mb-3' md={2}>
+                    <Card.Img variant="top" src={"https://image.tmdb.org/t/p/w500" + item.profile_path} />
+                </Col>
+                           ))}
+            </Row>
+
+
         </Navbar>
     )
 }
@@ -41,11 +51,13 @@ export default Detalhes
 export async function getServerSideProps(context) {
 
     const id = context.params.id
-    const resultado = await apiFilmes.get('/movie/' + id)
+    const resultado = await apiFilmes.get('/movie/' + id + '?language=pt-BR')
     const filme = resultado.data
 
-    const resAtores= await apiFilmes.get('/movie/' + id + '/credits')
+    const resAtores= await apiFilmes.get('/movie/' + id + '/credits?language=pt-BR')
     const atores = resAtores.data.cast
+
+
 
     return {
         props: { filme, atores },
