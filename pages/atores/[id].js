@@ -63,7 +63,7 @@ export async function getServerSideProps(context) {
 
     const id = context.params.id
 
-    const resultado = await apiFilmes.get('/person/' + id)
+    const resultado = await apiFilmes.get('/person/' + id + '?language=pt-br')
     const ator = resultado.data
 
     const resImagens = await apiFilmes.get('/person/' + id + '/images?language=pt-BR')

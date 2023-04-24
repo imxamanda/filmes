@@ -9,9 +9,9 @@ const Cabecalho = () => {
         <Container>
           <Navbar.Brand href="#home">Movie</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
+            <Nav.Link href="#home">Atores</Nav.Link>
+            <Nav.Link href="#features">Series TV</Nav.Link>
+          
           </Nav>
         </Container>
       </Navbar>
