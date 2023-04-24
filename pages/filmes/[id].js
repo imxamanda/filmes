@@ -2,7 +2,7 @@ import Navbar from '@/components/Navbar'
 import apiFilmes from '@/services/apiFilmes'
 import React from 'react'
 import { Card, Col, Row } from 'react-bootstrap'
-
+import Link from 'next/link'
 
 const Detalhes = ({filme, atores}) => {
    

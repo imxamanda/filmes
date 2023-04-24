@@ -1,10 +1,8 @@
-import apiDeputados from '@/services/apiDeputados'
-import React, { Component, useEffect, useState } from 'react'
+import React from 'react'
 import Navbar from '@/components/Navbar'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import apiFilmes from '@/services/apiFilmes';
-import Card from 'react-bootstrap/Card';
-import { Button, Col, Row } from 'react-bootstrap';
+import { Card, Button, Col, Row } from 'react-bootstrap';
 import Link from 'next/link';
 
 const index = (props) => {
