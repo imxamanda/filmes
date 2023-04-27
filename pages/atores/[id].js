@@ -3,6 +3,7 @@ import apiFilmes from '@/services/apiFilmes'
 import React from 'react'
 import { Card, Col, Row } from 'react-bootstrap'
 import Link from 'next/link'
+import Galeria from '@/components/Galeria'
 
 const Detalhes = ({ ator, imagens, filmes, series }) => {
 
@@ -21,6 +22,7 @@ const Detalhes = ({ ator, imagens, filmes, series }) => {
                     <p><strong>📖 Biografia: </strong>{ator.biography}</p>
                 </Col>
             </Row>
+            <Galeria titulo="img" lista={imagens}/>
 
             <h2 className='mt-4'>Imagens</h2>
             <Row>

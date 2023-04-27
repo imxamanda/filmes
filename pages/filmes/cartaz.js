@@ -1,14 +1,13 @@
-import React from 'react'
 import Navbar from '@/components/Navbar'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import apiFilmes from '@/services/apiFilmes';
-import { Card, Button, Col, Row } from 'react-bootstrap';
-import Link from 'next/link';
+import apiFilmes from '@/services/apiFilmes'
+import Link from 'next/link'
+import React, { useEffect, useState } from 'react'
+import { Button, Card, Col, Navbar, Row } from 'react-bootstrap'
 
 const index = ({filmes}) => {
 
     return (
-        <Navbar titulo="Filmes Lançamentos">
+        <Navbar titulo="Filmes Em Cartaz">
 
             <Row md={4}>
                 {filmes.map(item => (
@@ -34,7 +33,7 @@ export default index
 
 export async function getServerSideProps(context) {
 
-    const resultado = await apiFilmes.get('/movie/upcoming?language=pt-BR')
+    const resultado = await apiFilmes.get('/movie/now_playing?language=pt-BR')
     const filmes = resultado.data.results
 
     return {
