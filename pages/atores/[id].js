@@ -22,27 +22,11 @@ const Detalhes = ({ ator, imagens, filmes, series }) => {
                     <p><strong>📖 Biografia: </strong>{ator.biography}</p>
                 </Col>
             </Row>
-            <Galeria titulo="img" lista={imagens}/>
 
-            <h2 className='mt-4'>Imagens</h2>
-            <Row>
-                {imagens.map(item => (
-                    <Col md={1} className='mb-3'>
-                        <Card.Img variant="top" src={'https://image.tmdb.org/t/p/w500/' + item.file_path} />
-                    </Col>
-                ))}
-            </Row>
+            <Galeria titulo="img" lista={imagens} foto="file_path"/>
+            <Galeria titulo="img/filmes" lista={filmes} foto="poster_path"/>
 
-            <h2 className='mt-4'>Filmografia:</h2>
-            <Row>
-                {filmes.map(item => (
-                    <Col title={item.title } md={2} className='mb-3'>
-                        <Link href={'/filmes/' + item.id}>
-                            <Card.Img variant="top" src={'https://image.tmdb.org/t/p/w500/' + item.poster_path} />
-                        </Link>
-                    </Col>
-                ))}
-            </Row>
+          
 
             <h2 className='mt-4'>Produções de TV que participou:</h2>
             <Row>
