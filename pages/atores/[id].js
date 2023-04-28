@@ -6,7 +6,7 @@ import Link from 'next/link'
 import Galeria from '@/components/Galeria'
 
 const Detalhes = ({ ator, imagens, filmes, series }) => {
-
+   
     return (
 
         <Navbar titulo={ator.name}>
@@ -23,21 +23,13 @@ const Detalhes = ({ ator, imagens, filmes, series }) => {
                 </Col>
             </Row>
 
-            <Galeria titulo="img" lista={imagens} foto="file_path"/>
-            <Galeria titulo="img/filmes" lista={filmes} foto="poster_path"/>
+            <Galeria lista={imagens} foto="file_path" size={1}/>
+            <Galeria titulo="Filmes que participo:" lista={filmes} foto="poster_path" />
+            <Galeria titulo="Produções de TV que participou:" lista={series} foto="poster_path" />
 
           
 
-            <h2 className='mt-4'>Produções de TV que participou:</h2>
-            <Row>
-                {series.map(item => (
-                    <Col title={item.title } md={2} className='mb-3'>
-                        <Link href={'/series/' + item.id}>
-                            <Card.Img variant="top" src={'https://image.tmdb.org/t/p/w500/' + item.poster_path} />
-                        </Link>
-                    </Col>
-                ))}
-            </Row>
+        
 
         </Navbar>
     )
